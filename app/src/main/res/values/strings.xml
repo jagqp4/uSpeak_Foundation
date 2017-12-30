@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Second_Test_App</string>
+
+    <!-- Home -->
+    <string name="home">Home</string>
+    <string name="speak_button">Share Your Opinion</string>
+    <string name="rep_button">Representative Profiles</string>
+    <string name="about_button">About Us</string>
+    <string name="headline">Reclaim your voice in our democracy!</string>
+
+
+    <!--Speak -->
+    <string name="speak">Speak</string>
+    <string name="speak_bill_name">H.R. 3388 a.k.a SELF DRIVE Act</string>
+    <string name="speak_bill_details">
+        "The goal of the bill is to formalize the federal government's role in regulating the "
+        "safety of highly automated vehicles ( H.A.V.s, think self-driving cars). \n\n"
+
+        "Sponsor(s): Robert Lotta (R, Ohio, 5th District) \n\n\n"
+        "Key Features \n\n"
+        "    • Emphasizes that states cannot enforce regulations or safety standards on H.A.V.s "
+        "that conflict with federal government's regulations \n\n"
+        "    • Affirms a state's right to regulate the sale / distribution of H.A.V \n\n"
+        "    • Reiterates that drivers of H.A.V.s assume liability in the same way as if they were "
+        "driving a regular motor vehicle \n\n"
+        "    • Imposes more rigorous safety reporting standards for H.A.V. manufacturers including "
+        "a focus on cybersecurity to prevent systems from being hacked \n\n"
+        "    • Authorizes the creation of a Highly Automated Vehicle Advisory Council responsible "
+        "for gathering information, developing technological advice, and presenting recommendations \n\n"
+        "    • Requires manufacturers to specify privacy policies regarding data collected from H.A.V.s \n\n"
+    </string>
+    <string name="speak_details">The Details</string>
+    <string name="speak_header2">Do you approve or disapprove this bill?</string>
+
+    <!-- Rep -->
+    <string name="rep">Your Representative</string>
+    <string name="rep_name">Bobby Rush</string>
+    <string name="rep_your_rep">Your Representative</string>
+    <string name="rep_district">Illinois 1st District</string>
+
+    <string name="rep_subhead_1">Representative Bio</string>
+    <string name="rep_subhead2">Voting Record</string>
+
+    <string name="rep_bio">
+        "Elected Office: \n"
+        "    • US House of Representatives, 1993-Present \n"
+        "    • US Army, 1963-1968 \n\n"
+        "Education: \n
+        "    • Master\'s, Political Science, University of Illinois at Chicago \n"
+        "    • Master\'s, Divinity, McCormick Theological Seminary \n"
+        "    • Bachelor\'s, Political Science, Roosevelt University \n\n"
+        "Personal: \n"
+        "    • Married to wife, Carolyn; 7 children \n"
+        "    • Attends Beloved Community Church of God in Christ, Chicago, IL"
+    </string>
+
+    <!-- About -->
+    <string name="about">About</string>
+
+    <string name="about_subhead1">Our Team</string>
+    <string name="about_name_1">John R. Schultz</string>
+    <string name="about_name_2">Cristen A. Bublitz</string>
+    <string name="about_name_3">Jordan A. Gunter</string>
+    <string name="about_bio1">Bio1</string>
+    <string name="about_bio2">Bio2</string>
+    <string name="about_bio_3">Bio3</string>
+    <string name="about_bio4">Bio4</string>
+
+    <!-- Settings -->
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_speak">SpeakActivity</string>
+    <string name="title_activity_representative">RepresentativeActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="search">Search</string>
+
+</resources>
