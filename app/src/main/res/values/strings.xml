@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Second_Test_App</string>
-
+    <string name="approve">Approve</string>
+    <string name="disapprove">Disapprove</string>
+    <string name="indifferent">Indifferent</string>
+    <string name="submit">Submit</string>
     <!-- Home -->
     <string name="home">Home</string>
     <string name="speak_button">Share Your Opinion</string>
@@ -37,9 +40,9 @@
     <string name="rep_name">Bobby Rush</string>
     <string name="rep_your_rep">Your Representative</string>
     <string name="rep_district">Illinois 1st District</string>
-
-    <string name="rep_subhead_1">Representative Bio</string>
-    <string name="rep_subhead2">Voting Record</string>
+    <string name="rep_subhead1">Do You Approve or Disapprove of the Way Bobby Rush Has Done His Job?</string>
+    <string name="rep_subhead2">Representative Bio</string>
+    <string name="rep_subhead3">Voting Record</string>
 
     <string name="rep_bio">
         "Elected Office: \n"
@@ -61,7 +64,12 @@
     <string name="about_name_1">John R. Schultz</string>
     <string name="about_name_2">Cristen A. Bublitz</string>
     <string name="about_name_3">Jordan A. Gunter</string>
-    <string name="about_bio1">Bio1</string>
+    <string name="about_bio1">
+        "Political Science student at the University of Chicago. While in college founded a"
+        " non-profit consulting firm that aided non-profits on the South-side of Chicago and in"
+        " Guatemala. John also has experience working in the Obama White House and the United States"
+        " State Department."
+    </string>
     <string name="about_bio2">Bio2</string>
     <string name="about_bio_3">Bio3</string>
     <string name="about_bio4">Bio4</string>
