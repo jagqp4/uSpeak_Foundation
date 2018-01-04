@@ -11,7 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class RepresentativeActivity extends AppCompatActivity {
 
@@ -20,13 +24,46 @@ public class RepresentativeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_representative);
 
-        Toolbar rep_toolbar = (Toolbar) findViewById(R.id.rep_toolbar);
+        Toolbar rep_toolbar = findViewById(R.id.rep_toolbar);
         rep_toolbar.setTitle("Your Representative");
         setSupportActionBar(rep_toolbar);
 
         ImageView image = findViewById(R.id.rep_pic);
         image.setImageResource(R.drawable.bobby_rush_photo);
 
+        ImageView vote1Graphic = findViewById(R.id.vote_1_graphic);
+        vote1Graphic.setImageResource(R.drawable.green_check);
+
+        ImageView vote2Graphic = findViewById(R.id.vote_2_graphic);
+        vote2Graphic.setImageResource(R.drawable.red_x);
+
+        ImageView vote3Graphic = findViewById(R.id.vote_3_graphic);
+        vote3Graphic.setImageResource(R.drawable.red_x);
+
+
+        addListenerToButton();
+
+    }
+
+    private boolean addListenerToButton(){
+        final RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        Button submit = findViewById(R.id.submitButton);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(radioGroup.getCheckedRadioButtonId() != -1) {
+
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    RadioButton choice = findViewById(selectedId);
+
+                    Toast.makeText(RepresentativeActivity.this,
+                            choice.getText(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        return true;
     }
 
     @Override

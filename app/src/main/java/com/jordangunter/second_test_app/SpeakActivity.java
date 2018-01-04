@@ -11,6 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class SpeakActivity extends AppCompatActivity {
 
@@ -18,9 +22,31 @@ public class SpeakActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speak);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.speak_toolbar);
+        Toolbar toolbar = findViewById(R.id.speak_toolbar);
         toolbar.setTitle("Speak");
         setSupportActionBar(toolbar);
+
+        addListenerToButton();
+    }
+
+    private boolean addListenerToButton(){
+        final RadioGroup radioGroup = findViewById(R.id.radioGroup);
+        Button submit = findViewById(R.id.submitButton);
+
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(radioGroup.getCheckedRadioButtonId() != -1) {
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    RadioButton choice = findViewById(selectedId);
+
+                    Toast.makeText(SpeakActivity.this,
+                            choice.getText(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        return true;
     }
 
     @Override

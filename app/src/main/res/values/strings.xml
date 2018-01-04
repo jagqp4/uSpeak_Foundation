@@ -42,7 +42,8 @@
     <string name="rep_district">Illinois 1st District</string>
     <string name="rep_subhead1">Do You Approve or Disapprove of the Way Bobby Rush Has Done His Job?</string>
     <string name="rep_subhead2">Representative Bio</string>
-    <string name="rep_subhead3">Voting Record</string>
+    <string name="rep_subhead3">Latest Votes</string>
+    <string name="rep_subhead4">Donate Now</string>
 
     <string name="rep_bio">
         "Elected Office: \n"
@@ -56,6 +57,16 @@
         "    • Married to wife, Carolyn; 7 children \n"
         "    • Attends Beloved Community Church of God in Christ, Chicago, IL"
     </string>
+
+    <string name="rep_vote_1">Self-Drive Act (co-sponsor)</string>
+    <string name="rep_vote_2">Register of Copyrights Selection &amp; Accountability Act</string>
+    <string name="rep_vote_3">Control Unlawful Fugitive Felons Act</string>
+
+    <string name="rep_date_1">09.06.2017</string>
+    <string name="rep_date_2">04.26.2017</string>
+    <string name="rep_date_3">09.28.2017</string>
+
+    <string name="rep_donate_description">If you support your Representative, you can use the link below to donate to their re-election campaign</string>
 
     <!-- About -->
     <string name="about">About</string>
