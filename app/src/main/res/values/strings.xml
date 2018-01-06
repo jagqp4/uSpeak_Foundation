@@ -81,9 +81,12 @@
         " Guatemala. John also has experience working in the Obama White House and the United States"
         " State Department."
     </string>
-    <string name="about_bio2">Bio2</string>
-    <string name="about_bio_3">Bio3</string>
-    <string name="about_bio4">Bio4</string>
+    <string name="about_bio2">
+        "Political Science student at the University of Chicago. Created a product-based start-up"
+        " while in High School that was featured in the Kaufman Foundation's Summer Catalog. Also"
+        " has marketing and venture capital experience"
+    </string>
+    <string name="about_bio3">Bio3</string>
 
     <!-- Settings -->
     <string name="action_settings">Settings</string>

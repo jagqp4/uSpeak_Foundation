@@ -32,6 +32,7 @@
         tools:layout_editor_absoluteX="8dp" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/speak_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
+        android:background="@drawable/button"
         android:id="@+id/rep_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

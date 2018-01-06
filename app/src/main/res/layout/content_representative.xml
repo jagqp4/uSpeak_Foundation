@@ -284,11 +284,14 @@
             android:layout_width="wrap_content" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/donateButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/rep_subhead4"
+            android:background="@drawable/donate_button"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/donate_description" />
