@@ -1,5 +1,7 @@
 package com.jordangunter.second_test_app;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -53,8 +55,15 @@ public class SpeakActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.speak_menu, menu);
         MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView =
-                (SearchView) MenuItemCompat.getActionView(searchItem);
+                (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+
 
         // Configure the search info and add any event listeners...
         MenuItem.OnActionExpandListener expandListener = new MenuItem.OnActionExpandListener(){

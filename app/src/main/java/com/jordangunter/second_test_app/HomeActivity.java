@@ -56,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
     getMenuInflater().inflate(R.menu.home_menu, menu);
-
+    /*
     MenuItem searchItem = menu.findItem(R.id.action_search);
     SearchView searchView =
             (SearchView) MenuItemCompat.getActionView(searchItem);
@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
             return true;
         }
     };
-
+    */
     return super.onCreateOptionsMenu(menu);
 }
 

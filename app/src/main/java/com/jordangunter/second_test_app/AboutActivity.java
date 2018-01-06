@@ -27,7 +27,7 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.about_menu, menu);
-
+        /*
         MenuItem searchItem = menu.findItem(R.id.action_search);
         SearchView searchView =
                 (SearchView) MenuItemCompat.getActionView(searchItem);
@@ -44,7 +44,7 @@ public class AboutActivity extends AppCompatActivity {
                 return true;
             }
         };
-
+        */
         return super.onCreateOptionsMenu(menu);
     }
 

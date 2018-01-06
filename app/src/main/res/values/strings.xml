@@ -4,6 +4,7 @@
     <string name="disapprove">Disapprove</string>
     <string name="indifferent">Indifferent</string>
     <string name="submit">Submit</string>
+
     <!-- Home -->
     <string name="home">Home</string>
     <string name="speak_button">Share Your Opinion</string>
@@ -34,6 +35,8 @@
     </string>
     <string name="speak_details">The Details</string>
     <string name="speak_header2">Do you approve or disapprove this bill?</string>
+    <string name="speak_search_hint">Enter a bill name</string>
+
 
     <!-- Rep -->
     <string name="rep">Your Representative</string>
@@ -44,7 +47,6 @@
     <string name="rep_subhead2">Representative Bio</string>
     <string name="rep_subhead3">Latest Votes</string>
     <string name="rep_subhead4">Donate Now</string>
-
     <string name="rep_bio">
         "Elected Office: \n"
         "    • US House of Representatives, 1993-Present \n"
@@ -57,20 +59,17 @@
         "    • Married to wife, Carolyn; 7 children \n"
         "    • Attends Beloved Community Church of God in Christ, Chicago, IL"
     </string>
-
     <string name="rep_vote_1">Self-Drive Act (co-sponsor)</string>
     <string name="rep_vote_2">Register of Copyrights Selection &amp; Accountability Act</string>
     <string name="rep_vote_3">Control Unlawful Fugitive Felons Act</string>
-
     <string name="rep_date_1">09.06.2017</string>
     <string name="rep_date_2">04.26.2017</string>
     <string name="rep_date_3">09.28.2017</string>
-
     <string name="rep_donate_description">If you support your Representative, you can use the link below to donate to their re-election campaign</string>
+
 
     <!-- About -->
     <string name="about">About</string>
-
     <string name="about_subhead1">Our Team</string>
     <string name="about_name_1">John R. Schultz</string>
     <string name="about_name_2">Cristen A. Bublitz</string>
@@ -88,11 +87,13 @@
     </string>
     <string name="about_bio3">Bio3</string>
 
+
     <!-- Settings -->
     <string name="action_settings">Settings</string>
     <string name="title_activity_speak">SpeakActivity</string>
     <string name="title_activity_representative">RepresentativeActivity</string>
     <string name="title_activity_about">AboutActivity</string>
     <string name="search">Search</string>
+    <string name="title_activity_search">SearchResultsActivity</string>
 
 </resources>
