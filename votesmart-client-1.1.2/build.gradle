@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('votesmart-client-1.1.2.jar'))

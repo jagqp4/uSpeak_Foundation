@@ -1,13 +1,14 @@
 package com.jordangunter.second_test_app;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,7 +18,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+
 public class RepresentativeActivity extends AppCompatActivity {
+    private FusedLocationProviderClient mFusedLocationClient;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +49,6 @@ public class RepresentativeActivity extends AppCompatActivity {
 
 
         addListenerToButton();
-
     }
 
     private boolean addListenerToButton(){
@@ -69,10 +75,14 @@ public class RepresentativeActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.representative_menu, menu);
-
         MenuItem searchItem = menu.findItem(R.id.action_search);
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView =
-                (SearchView) MenuItemCompat.getActionView(searchItem);
+                (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
 
         // Configure the search info and add any event listeners...
         MenuItem.OnActionExpandListener expandListener = new MenuItem.OnActionExpandListener(){
@@ -99,6 +109,7 @@ public class RepresentativeActivity extends AppCompatActivity {
             case R.id.action_home:
                 Intent homeIntent = new Intent(this,HomeActivity.class);
                 startActivity(homeIntent);
+                return true;
             case R.id.action_speak:
                 Intent speakIntent = new Intent(this,SpeakActivity.class);
                 startActivity(speakIntent);

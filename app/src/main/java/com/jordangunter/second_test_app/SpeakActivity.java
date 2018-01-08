@@ -17,6 +17,9 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import org.votesmart.classes.*;
+import org.votesmart.api.*;
+import org.votesmart.data.*;
 
 public class SpeakActivity extends AppCompatActivity {
 
@@ -29,8 +32,10 @@ public class SpeakActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         addListenerToButton();
+        //initializeBill();
     }
 
+    //sets up polling feature
     private boolean addListenerToButton(){
         final RadioGroup radioGroup = findViewById(R.id.radioGroup);
         Button submit = findViewById(R.id.submitButton);
@@ -51,6 +56,7 @@ public class SpeakActivity extends AppCompatActivity {
         return true;
     }
 
+    //sets up menu bar navigation
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.speak_menu, menu);
@@ -108,4 +114,10 @@ public class SpeakActivity extends AppCompatActivity {
         }
 
     }
+
+    private boolean initializeBill() {
+        //VotesClass votesClass = new VotesClass();
+        return true;
+    }
+
 }
