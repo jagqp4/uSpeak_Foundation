@@ -11,16 +11,14 @@ import android.os.Handler;
 import android.os.ResultReceiver;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MenuItem.OnActionExpandListener;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -32,20 +30,18 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
-import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements LoginDialogFragment.NoticeDialogListener{
 
     public static final int REQUEST_CHECK_SETTINGS = 2;
     public static final int RC_SIGN_IN = 3;
@@ -55,8 +51,9 @@ public class HomeActivity extends AppCompatActivity {
     private boolean isSignedInGoogle = false;
 
     private GoogleSignInClient mGoogleSignInClient;
-    private FusedLocationProviderClient mFusedLocationClient;
+    private LoginDialogFragment mloginDialog;
 
+    private FusedLocationProviderClient mFusedLocationClient;
     protected Location lastLocation;
     private AddressResultsReceiver mResultReceiver;
 
@@ -69,6 +66,8 @@ public class HomeActivity extends AppCompatActivity {
             checkPermission();
         }
 
+        setContentView(R.layout.activity_home);
+
         //setup google sign in client
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -80,9 +79,8 @@ public class HomeActivity extends AppCompatActivity {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account != null){
             isSignedInGoogle = true;
+            findViewById(R.id.sign_in_google).setVisibility(View.INVISIBLE);
         }
-
-        setContentView(R.layout.activity_home);
 
         //Initialize toolbar
         Toolbar homeToolbar = (Toolbar) findViewById(R.id.home_toolbar);
@@ -192,12 +190,13 @@ public class HomeActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
-            t.setText("@string/sign_in_success");
+            t.setText("sign_in_success");
+            findViewById(R.id.sign_in_google).setVisibility(View.INVISIBLE);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w("__ERROR__", "signInResult:failed code=" + e.getStatusCode());
-            t.setText("@string/sign_in_error");
+            t.setText("sign_in_error");
         }
     }
 
@@ -274,8 +273,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        final Button loginButton = findViewById(R.id.login_button);
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        final Button otherButton = findViewById(R.id.sign_in_other);
+        otherButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startLoginDialogue();
             }
@@ -342,12 +341,38 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(aboutIntent);
     }
 
-    private void startLoginDialogue(){
+    /*  Methods needed for login dialog   */
 
+    private void startLoginDialogue(){
+        LoginDialogFragment loginFragment = new LoginDialogFragment();
+        loginFragment.show(getSupportFragmentManager(), "login");
+        mloginDialog = loginFragment;
     }
 
     private void startRegisterDialogue(){
 
+    }
+
+    public void showLoginDialog() {
+        // Create an instance of the dialog fragment and show it
+        DialogFragment dialog = new LoginDialogFragment();
+        dialog.show(getSupportFragmentManager(), "LoginDialogFragment");
+    }
+
+    // The dialog fragment receives a reference to this Activity through the
+    // Fragment.onAttach() callback, which it uses to call the following methods
+    // defined by the NoticeDialogFragment.NoticeDialogListener interface
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        String user = mloginDialog.getUsername();
+        String pass = mloginDialog.getPassword();
+        Log.d("__USER__", user);
+        Log.d("__PASS__", pass);
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+        // User touched the dialog's negative button
     }
 
 
