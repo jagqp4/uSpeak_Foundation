@@ -7,9 +7,11 @@
 
     <!-- Home -->
     <string name="home">Home</string>
-    <string name="speak_button">Share Your Opinion</string>
-    <string name="rep_button">Representative Profiles</string>
-    <string name="about_button">About Us</string>
+    <string name="home_speak_text">Bills</string>
+    <string name="home_rep_text">Representatives</string>
+    <string name="home_about_text">About Us</string>
+    <string name="home_register">Register</string>
+    <string name="home_login">Login</string>
     <string name="headline">Reclaim your voice in our democracy!</string>
 
 
@@ -95,5 +97,14 @@
     <string name="title_activity_about">AboutActivity</string>
     <string name="search">Search</string>
     <string name="title_activity_search">SearchResultsActivity</string>
+    <string name="invalid_lat_long_used">The latitude and/or longitude values that are provided in the Location object are invalid.</string>
+    <string name="service_not_available">The background geocoding service is not available due to a network error or IO exception.</string>
+    <string name="no_address_found">The geocoder can\'t find an address for the given latitude/longitude</string>
+    <string name="address_found">Address found</string>
+    <string name="no_geocoder_available">No geocoder available. Cannot fetch address</string>
 
+    <!-- Debug -->
+    <string name="sign_in_success">Signed In</string>
+    <string name="not_sign_in">Not signed in</string>
+    <string name="sign_in_error">Error signing in</string>
 </resources>

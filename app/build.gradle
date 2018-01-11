@@ -40,9 +40,12 @@ dependencies {
     //compile project(':votesmart-client-1.1.2-sources.jar')
     implementation 'org.votesmart:votesmart-client:1.1.2'
 
-    //classpath 'com.google.gms.google-services:3.1.1'
     implementation 'com.google.android.gms:play-services-location:11.8.0'
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation 'com.google.android.gms:play-services-auth:11.8.0'
+
+    implementation 'com.google.firebase:firebase-core:11.8.0'
+
 }
 
-
+apply plugin: 'com.google.gms.google-services'

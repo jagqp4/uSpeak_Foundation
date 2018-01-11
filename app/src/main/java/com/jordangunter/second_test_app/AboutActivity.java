@@ -57,6 +57,7 @@ public class AboutActivity extends AppCompatActivity {
             case R.id.action_home:
                 Intent homeIntent = new Intent(this,HomeActivity.class);
                 startActivity(homeIntent);
+                return true;
             case R.id.action_speak:
                 Intent speakIntent = new Intent(this,SpeakActivity.class);
                 startActivity(speakIntent);
